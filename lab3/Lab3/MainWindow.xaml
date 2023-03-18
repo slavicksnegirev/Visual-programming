@@ -1,0 +1,57 @@
+﻿<Window x:Class="Lab3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1000" Left="0" Top="0" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Страница -->
+        <Frame Name="page_webB" NavigationUIVisibility="Hidden" Grid.Row="2"  Margin="0,5,0,0">
+        </Frame>
+        
+        <!-- Вкладки -->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Name="tabs" Grid.Column="0" Orientation="Horizontal">
+                <Button Name="addTabBtn" Width="20" Height="20" Content="+" Margin="2,0,0,0" Click="addTabBtn_Click"></Button>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button Name="addNotesBtn" Width="46" Content="☆" FontSize="18" Margin="2,0,0,2" Click="addNotesBtn_Click"/>
+                <ComboBox Width="46" FontSize="18" Margin="2,0,0,2">
+                    <ComboBoxItem>
+                        <Button Name="historyBtn" VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Content="📝" Click="historyBtn_Click"></Button>
+                    </ComboBoxItem>
+                    <ComboBoxItem>
+                        <Button Name="noteBtn" VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Content="☆" Click="noteBtn_Click"/>
+                    </ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+        </Grid>
+
+
+        <!-- Поиск -->
+        <Grid Grid.Row="1" Background="LightGray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="35"/>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="105"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="backBtn" Content="←" Grid.Column="0" Margin="5,0,10,0" FontSize="15" Click="backBtn_Click"/>
+            <Button Name="forwardBtn" Content="→" Grid.Column="1" Margin="0,0,5,0" FontSize="15" Click="forwardBtn_Click"/>
+            <TextBox Name="textBox" Height="25" BorderBrush="Black" Foreground="White" Background="Gray" VerticalContentAlignment="Center" BorderThickness="2" Grid.Column="2" Margin="5,0,5,0"/>
+            <Button Name="searchBtn" Content="Поиск" FontSize="18" Grid.Column="3" Margin="10,0,5,0" Click="searchBtn_Click"/>
+        </Grid>
+    </Grid>
+</Window>

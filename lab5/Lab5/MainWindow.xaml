@@ -1,0 +1,41 @@
+﻿<Window x:Class="Lab5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab5"
+        mc:Ignorable="d"
+        Name="window"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="160"/>
+        </Grid.ColumnDefinitions>
+        <Canvas Name="myCanvas" MouseLeftButtonDown="myCanvas_MouseDown" Background="GhostWhite" Focusable="True"/>
+
+        <StackPanel Background="DarkGray" Grid.Column="1">
+            <Button Name="clearBtn" Content="Clear" Height="50" FontSize="23" Click="clearBtn_Click"/>
+            <Button Name="clearLinessBtn" Content="Clear Lines" Height="50" FontSize="23" Click="clearLinessBtn_Click"/>
+            <CheckBox Name="checkPoint" FontSize="12" Content="Auto Point" VerticalContentAlignment="Center" Checked="checkPoint_Checked" Unchecked="checkPoint_Unchecked">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <Label Name="label1" Content="Количксто точек" FontSize="18"/>
+            <TextBox Name="CountAutoPoint" Height="30" VerticalContentAlignment="Center"/>
+            <CheckBox Name="checkLine" FontSize="12" Content="Auto Line" VerticalContentAlignment="Center" Checked="checkLine_Checked" Unchecked="checkLine_Unchecked">
+                <CheckBox.LayoutTransform>
+                    <ScaleTransform ScaleX="2" ScaleY="2" />
+                </CheckBox.LayoutTransform>
+            </CheckBox>
+            <Label FontSize="18">
+                <Label.Content>
+                    <TextBlock TextWrapping="Wrap" FontSize="18" Text="Расстояние между точками для соединения"></TextBlock>
+                </Label.Content>
+            </Label>
+            <TextBox Name="DistanceAutoPoint" Height="30" VerticalContentAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+
+</Window>
